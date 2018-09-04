@@ -3,28 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GlobalShop : MonoBehaviour {
-
+public class GlobalBaker : MonoBehaviour
+{
 	public GameObject realBtn;
 	public GameObject realBtnText;
 	public GameObject fakeBtn;
 	public GameObject fakeBtnText;
 	public int currentCash;
 
-	public static int cashMakerValue = 5;
+	public static int bakerValue = 20;
 	public static bool turnOffBtn = false;
-	public GameObject casherStats;
-	public static int numberOfCashers;
-	public static int cashersPerSec;
 
 	void Update ()
 	{
 		currentCash = GlobalCash.cashCount;
-		casherStats.GetComponent<Text> ().text = "cashers: " + numberOfCashers + "/" + cashersPerSec + " per sec";
-		fakeBtnText.GetComponent<Text> ().text = "Buy auto cash - $" + cashMakerValue;
-		realBtnText.GetComponent<Text> ().text = "Buy auto cash - $" + cashMakerValue;
+		fakeBtnText.GetComponent<Text> ().text = "Buy auto - $" + bakerValue;
+		realBtnText.GetComponent<Text> ().text = "Buy auto - $" + bakerValue;
 
-		if (currentCash >= cashMakerValue) {
+		if (currentCash >= bakerValue) {
 			realBtn.SetActive (true);
 			fakeBtn.SetActive (false);
 		}
