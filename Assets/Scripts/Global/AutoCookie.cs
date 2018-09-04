@@ -10,7 +10,6 @@ public class AutoCookie : MonoBehaviour {
 	
 
 	void Update () {
-		cookieIncrease = GlobalBaker.bakersPerSec;
 		internalCookieIncrease = cookieIncrease;
 		if (creatingCookie == false) {
 			creatingCookie = true;
