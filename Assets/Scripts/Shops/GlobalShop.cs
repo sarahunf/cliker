@@ -11,16 +11,16 @@ public class GlobalShop : MonoBehaviour {
 	public GameObject fakeBtnText;
 	public int currentCash;
 
-	public static int cashMakerValue = 5;
+	public static int cashMakerValue = 50;
 	public static bool turnOffBtn = false;
 	public GameObject casherStats;
-	public static int numberOfCashers;
-	public static int cashersPerSec;
+	public static int numberOfShopers;
+	public static int shopersPerSec;
 
 	void Update ()
 	{
 		currentCash = GlobalCash.cashCount;
-		casherStats.GetComponent<Text> ().text = "cashers: " + numberOfCashers + "/" + cashersPerSec + " per sec";
+		casherStats.GetComponent<Text> ().text = "shoppeross: " + numberOfShopers + "/" + shopersPerSec + " per sec";
 		fakeBtnText.GetComponent<Text> ().text = "Buy auto cash - $" + cashMakerValue;
 		realBtnText.GetComponent<Text> ().text = "Buy auto cash - $" + cashMakerValue;
 

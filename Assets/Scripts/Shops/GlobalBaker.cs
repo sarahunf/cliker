@@ -21,8 +21,8 @@ public class GlobalBaker : MonoBehaviour
 	{
 		currentCash = GlobalCash.cashCount;
 		bakerStats.GetComponent<Text>().text = "bakers: " + numberOfBakers + "/ " + bakersPerSec + " per sec";
-		fakeBtnText.GetComponent<Text> ().text = "Buy auto - $" + bakerValue;
-		realBtnText.GetComponent<Text> ().text = "Buy auto - $" + bakerValue;
+		fakeBtnText.GetComponent<Text> ().text = "Buy auto cookie - $" + bakerValue;
+		realBtnText.GetComponent<Text> ().text = "Buy auto cookie - $" + bakerValue;
 
 		if (currentCash >= bakerValue) {
 			realBtn.SetActive (true);

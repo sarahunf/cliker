@@ -7,7 +7,7 @@ public class AutoCookie : MonoBehaviour {
 	public bool creatingCookie;
 	public static int cookieIncrease = 1;
 	public int internalCookieIncrease;
-	
+
 
 	void Update () {
 		cookieIncrease = GlobalBaker.bakersPerSec;

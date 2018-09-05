@@ -175,7 +175,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Auto cash - $20
+  m_Text: Auto cash - $5
 --- !u!222 &87373986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Auto cash - $20
+  m_Text: Auto cash - $5
 --- !u!222 &102582534
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -541,7 +541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10.6, y: -8.1}
+  m_AnchoredPosition: {x: -10.599976, y: -8.100006}
   m_SizeDelta: {x: 100.97, y: 30}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &400479116
@@ -1069,7 +1069,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 5.600006, y: -43}
+  m_AnchoredPosition: {x: 5.5999756, y: -43}
   m_SizeDelta: {x: 274.4, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &797339946
@@ -1409,6 +1409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ac910d3f515a146839a2e374055dbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instance: {fileID: 0}
   autoCookie: {fileID: 1464709467}
   autoCash: {fileID: 2074323602}
 --- !u!4 &1039398260
@@ -1509,7 +1510,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 5.600006, y: -8.1}
+  m_AnchoredPosition: {x: 5.5999756, y: -8.100006}
   m_SizeDelta: {x: 274.4, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1141222796
@@ -1727,6 +1728,12 @@ MonoBehaviour:
   savedCash: 0
   savedBakers: 0
   savedShop: 0
+  savedNumOfBakers: 0
+  savedBakersPerSec: 0
+  savedNumOfCashers: 0
+  savedShopersPerSec: 0
+  savedAutoCookie: {fileID: 1464709467}
+  savedAutoShop: {fileID: 2074323602}
 --- !u!114 &1323397345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2237,7 +2244,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 120.39, y: -139.67}
+  m_AnchoredPosition: {x: 97.5, y: -139.67}
   m_SizeDelta: {x: 158.78, y: 71.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1671528064
@@ -2846,6 +2853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SellingCookie: 0
   internalCashIncrease: 0
+  internalCookieIncrease: 0
 --- !u!1 &2081822340
 GameObject:
   m_ObjectHideFlags: 0
