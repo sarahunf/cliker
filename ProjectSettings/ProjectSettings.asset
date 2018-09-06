@@ -6,11 +6,11 @@ PlayerSettings:
   serializedVersion: 12
   productGUID: 35a2e2ec7ba793c4dbd6fa35a8291681
   AndroidProfiler: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 0
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: quarto2
   productName: Clicker
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -140,7 +140,8 @@ PlayerSettings:
   useHDRDisplay: 0
   targetPixelDensity: 0
   resolutionScalingMode: 0
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Android: com.quarto2.clicker
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16

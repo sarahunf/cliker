@@ -18,7 +18,7 @@ public class GameLoader : MonoBehaviour {
 	public GameObject savedAutoShop;
 
 	void Awake () {
-		if (MainMenuController.gameIsLoadead == true) {
+		if (SaveGame.gameIsLoadead == true) {
 			savedCookies = PlayerPrefs.GetInt ("SavedCookies", GlobalCookies.cookieCount);
 			GlobalCookies.cookieCount = savedCookies;
 			savedCash = PlayerPrefs.GetInt ("SavedCash", GlobalCash.cashCount);
@@ -40,6 +40,7 @@ public class GameLoader : MonoBehaviour {
 	}
 
 	void Start () {
+		
 		if (savedCash >= savedBakers){
 			savedAutoCookie.SetActive (true);
 		

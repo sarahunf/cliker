@@ -8,11 +8,11 @@ public class MainMenuController : MonoBehaviour {
 	public static bool gameIsLoadead = false;
 
 	public void NewGame() {
-		SceneManager.LoadScene (2);
+		SceneManager.LoadScene (1);
 	}
 
 	public void LoadGame() {
 		gameIsLoadead = true; 
-		SceneManager.LoadScene (2);
+		SceneManager.LoadScene (1);
 	}
 }

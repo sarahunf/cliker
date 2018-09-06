@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CookieClick : MonoBehaviour
 {
@@ -10,21 +11,40 @@ public class CookieClick : MonoBehaviour
 	public  AudioSource audioCookie;
 	public bool audioPlaying = false;
 
-	public void ClickTheButton ()
-	{
+	void Update ()
+	{	
+		#if UNITY_EDITOR
+		Debug.Log("Unity Editor");
 
-		GlobalCookies.cookieCount += 1;
-		if (audioPlaying == false) {
-			audioCookie.Play ();	
-			StartCoroutine (AudioCookiePlaying());
-			audioPlaying = true;
-		}
+		#elif UNITY_ANDROID
+		Rect bounds = new Rect (0, 0, Screen.width, Screen.height / 2);
+		//Touch[] myTouches = Input.touches;
+
+		Touch myTouch = Input.GetTouch (0);
+		for (int i = 0; i < Input.touchCount; i++) {
+			if (bounds.Contains (myTouch.position)) {
+				ClickTheButton ();
 		
+			}
 
+		}
+		#endif
 	}
 
-	IEnumerator AudioCookiePlaying() {
-		yield return new WaitWhile (()=> audioCookie.isPlaying);
+
+	public void ClickTheButton ()
+	{
+		GlobalCookies.cookieCount += 1;
+		if (audioPlaying == false) {
+			StartCoroutine (AudioCookiePlaying ());
+			audioPlaying = true;
+		}
+	}
+
+	IEnumerator AudioCookiePlaying ()
+	{
+		audioCookie.Play ();
+		yield return new WaitWhile (() => audioCookie.isPlaying);
 		audioPlaying = false;
 	}
 }
