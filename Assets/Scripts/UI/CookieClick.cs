@@ -10,25 +10,45 @@ public class CookieClick : MonoBehaviour
 	public GameObject textBox;
 	public  AudioSource audioCookie;
 	public bool audioPlaying = false;
+	public GameObject filling;
+
+	public int counter = 0; // lets start with zero
+
+
 
 	void Update ()
 	{	
-		#if UNITY_EDITOR
-		Debug.Log("Unity Editor");
 
-		#elif UNITY_ANDROID
-		Rect bounds = new Rect (0, 0, Screen.width, Screen.height / 2);
-		//Touch[] myTouches = Input.touches;
+		Rect bounds = new Rect (0, (Screen.height /2 ), Screen.width, (Screen.height/ 10));
+
+	#if UNITY_EDITOR
+
+		print ("height" + bounds.height);
+		print ("width" + bounds.width);
+
+	#elif UNITY_ANDROID
+
+		int fingerCount = 0;
 
 		Touch myTouch = Input.GetTouch (0);
+		Touch[] myTouches = Input.touches;
+
 		for (int i = 0; i < Input.touchCount; i++) {
-			if (bounds.Contains (myTouch.position)) {
+		if (bounds.Contains (myTouch.position)) {
 				ClickTheButton ();
 		
 			}
 
 		}
 		#endif
+	}
+
+	void OnGUI()
+	{
+		if (GUI.Button(new Rect(100,100,200,50), "Count: " + counter))
+		{ // the IF is true = clicked, lets count one
+			ClickTheButton (); 
+		}
 	}
 
 
